@@ -1,5 +1,27 @@
 ---
 
+- name: Make sure the latest npm is installed
+  apt: name={{ item }} state=latest
+  with_items:
+    - nodejs-legacy
+    - npm
+  tags:
+    - bower
+    - packages
+
+- name: Ensure Bower installed
+  npm: name=bower global=yes
+  tags:
+    - bower
+    - packages
+
+- debug: msg="Running Bower in {{ project_path }}"
+  tags: bower
+
+- name: Run Bower Install
+  bower: path={{ project_path }}
+  tags: bower
+
 - name: Install packages required by the Django app inside virtualenv
   pip: virtualenv={{ virtualenv_path }} requirements={{ requirements_file }}
 
