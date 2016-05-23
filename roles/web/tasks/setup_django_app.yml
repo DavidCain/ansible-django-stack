@@ -9,8 +9,12 @@
     - bower
     - packages
 
-- name: Ensure Bower installed
-  npm: name=bower global=yes
+- name: Ensure Bower and JS+CSS compressors installed
+  npm: name={{ item }} global=yes
+  with_items:
+    - bower
+    - uglifyjs
+    - yuglify
   tags:
     - bower
     - packages
