@@ -45,8 +45,12 @@
     app_path: "{{ project_path }}"
     virtualenv: "{{ virtualenv_path }}"
     settings: "{{ django_settings_file }}"
+    database: "{{ item }}"
   environment: "{{ django_environment }}"
   when: run_django_db_migrations is defined and run_django_db_migrations
+  with_items:
+    - default
+    - auth_db
   tags: django.migrate
 
 - name: Run Django collectstatic
