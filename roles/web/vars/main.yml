@@ -5,6 +5,7 @@ virtualenv_path: "/webapps/{{ application_name }}"
 project_path: "{{ virtualenv_path }}/{{ project_name }}"
 application_log_dir: "{{ virtualenv_path }}/logs"
 application_log_file: "{{ application_log_dir }}/gunicorn_supervisor.log"
+django_error_file: "{{ application_log_dir }}/django_errors.log"
 requirements_file: "{{ project_path }}/requirements.txt"
 
 
@@ -24,6 +25,7 @@ nginx_media_dir: "{{ virtualenv_path }}/media/"
 django_environment:
   DJANGO_SETTINGS_MODULE: "{{ django_settings_file }}"
   DJANGO_SECRET_KEY: "{{ django_secret_key }}"
+  DJANGO_ERROR_FILE: "{{ django_error_file|default(omit) }}"
   MEDIA_ROOT: "{{ nginx_media_dir }}"
   STATIC_ROOT: "{{ nginx_static_dir }}"
   AUTH_DATABASE_NAME: "{{ auth_db_name }}"

@@ -27,12 +27,15 @@
         mode=0774
         state=directory
 
-- name: Create the application log file
-  file: path={{ application_log_file }}
+- name: Create application log files
+  file: path={{ item }}
         owner={{ gunicorn_user }}
         group={{ gunicorn_group }}
         mode=0664
         state=touch
+  with_items:
+    - "{{ application_log_file }}"
+    - "{{ django_error_file }}"
 
 - name: Create the virtualenv postactivate script to set environment variables
   template: src=virtualenv_postactivate.j2
