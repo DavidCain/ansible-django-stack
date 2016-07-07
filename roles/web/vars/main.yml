@@ -33,4 +33,6 @@ django_environment:
   DATABASE_HOST: "{{ db_host|default('localhost') }}"
   DATABASE_USER: "{{ db_user }}"
   DATABASE_PASSWORD: "{{ db_password }}"
+  SES_USER: "{{ ses_user|default('') }}"
+  SES_PASSWORD: "{{ ses_password|default('') }}"
   BROKER_URL: "{{ broker_url }}"
