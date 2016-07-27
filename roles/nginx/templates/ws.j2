@@ -30,6 +30,8 @@ server {
     ssl_dhparam          /etc/ssl/certs/dhparams.pem;
     {% endif %}
 
+    add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; ";
+
     client_max_body_size 4G;
 
     access_log {{ nginx_access_log_file }};
