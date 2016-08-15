@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     override.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
     override.vm.network :private_network, ip: "192.168.33.15"
-    vb.customize ["modifyvm", :id, "--name", "MITOC Trips", "--memory", "512"]
+    vb.customize ["modifyvm", :id, "--name", "MITOC Trips", "--memory", "1024"]
   end
 
   config.vm.provider :aws do |aws, override|
