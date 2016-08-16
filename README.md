@@ -60,7 +60,15 @@ For obvious reasons, this file is encrypted using Ansible vault.
 In the public version of this repository, I have used `git filter-branch` to
 completely remove this sensitive file:
 
-    git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch env_vars/production.yml' --tag-name-filter cat -- --all
+```bash
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch env_vars/production.yml' --tag-name-filter cat -- --all
+```
+
+Production (an EC2 instance running Ubuntu server) is deployed directly with Ansible:
+
+```bash
+ansible-playbook -i hosts production.yml -u ubuntu --private-key=<path_to_iam_user_key>
+```
 
 
 ## History
