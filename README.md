@@ -28,10 +28,16 @@ using Vagrant.
 
 1. Store [AWS credentials][aws-credentials] in `.aws/credentials` or directly in the `Vagrantfile`
 2. Create a [keypair][aws-keypairs] or import an existing one
-3. Launch a new EC2 instance:
+3. Install and configure vagrant-aws
 
     ```bash
+    vagrant plugin install vagrant-aws
     vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box
+    ```
+
+4. Launch a new EC2 instance:
+
+    ```bash
     vagrant up --provider=aws
     ```
 
