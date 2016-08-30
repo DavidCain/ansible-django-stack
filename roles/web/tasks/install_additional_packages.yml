@@ -4,6 +4,8 @@
   apt: name={{ item }} update_cache={{ update_apt_cache }} force=yes state=installed
   with_items:
     - libav-tools
+    - mysql-client
+    - libmysqlclient-dev
 
 - name: Install pgcli
   pip: name=pgcli
