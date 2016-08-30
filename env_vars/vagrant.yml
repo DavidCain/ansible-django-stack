@@ -10,6 +10,10 @@ db_user: "{{ application_name }}"
 db_name: "{{ application_name }}"
 db_password: password
 
+gear_db_user: "{{ application_name }}"
+gear_db_password: "password"
+gear_db_name: "geardb"
+
 
 # Setting this to 1 will restart the Gunicorn process each time
 # you make a request, basically reloading the code. Very handy
