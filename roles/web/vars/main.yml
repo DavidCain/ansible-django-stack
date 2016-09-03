@@ -40,4 +40,5 @@ django_environment:
   SES_USER: "{{ ses_user|default('') }}"
   SES_PASSWORD: "{{ ses_password|default('') }}"
   BROKER_URL: "{{ broker_url }}"
+  OAUTH_JSON_CREDENTIALS: "{{ project_path }}/oauth_credentials.json"
   WS_DJANGO_LOCAL: "{{ django_debug|default('') }}"

@@ -29,6 +29,13 @@
 - name: Install packages required by the Django app inside virtualenv
   pip: virtualenv={{ virtualenv_path }} requirements={{ requirements_file }}
 
+- name: Copy over the Google API credentials
+  template: src=oauth_credentials.j2
+            dest={{ project_path }}/oauth_credentials.json
+            owner=root
+            group=root
+            mode=0400
+
 - name: Run the Django syncdb command
   django_manage:
     command: syncdb
