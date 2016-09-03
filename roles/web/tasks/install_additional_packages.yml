@@ -6,6 +6,7 @@
     - libav-tools
     - mysql-client
     - libmysqlclient-dev
+    - libssl-dev
 
 - name: Install pgcli
   pip: name=pgcli
