@@ -34,7 +34,7 @@
   tags: packages
 
 - name: Add repository for Python 3.5 to the sources list
-  apt_repository: repo='ppa:fkrull/deadsnakes'
+  apt_repository: repo='ppa:deadsnakes/ppa'
                   update_cache={{ update_apt_cache }}
                   state=present
 
