@@ -32,6 +32,7 @@ gear_db_host: REDACTED
 gear_db_user: REDACTED
 gear_db_password: REDACTED
 gear_db_name: REDACTED
+geardb_api_key: REDACTED
 
 # Credentials for gear database when we migrate over to Postgres
 # (These currently aren't used in production)

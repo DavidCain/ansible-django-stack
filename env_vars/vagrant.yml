@@ -24,6 +24,7 @@ gear_db_user: "{{ django_application_name }}"
 gear_db_password: "password"
 gear_db_name: "geardb"
 gear_db_host: "localhost"
+geardb_api_key: "secret-shared-with-geardb-and-trips"
 
 
 # Setting this to 1 will restart the Gunicorn process each time

@@ -50,6 +50,7 @@ django_environment:
   GEAR_DATABASE_USER: "{{ gear_db_user }}"
   GEAR_DATABASE_PASSWORD: "{{ gear_db_password }}"
   GEAR_DATABASE_HOST: "{{ gear_db_host|default('localhost') }}"
+  GEARDB_API_KEY: "{{ geardb_api_key }}"
   SES_USER: "{{ ses_user|default('') }}"
   SES_PASSWORD: "{{ ses_password|default('') }}"
   CELERY_BROKER_URL: "{{ celery_broker_url }}"
