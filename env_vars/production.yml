@@ -59,8 +59,8 @@ docusign_integrator_key: REDACTED
 # This is the SSL fingerprint of the DocuSign Connect certificate, obtained by:
 #     openssl x509 -in <cert> -noout -fingerprint
 # Certificates are available at:
-# https://trust.docusign.com/en-us/trust-certifications/docusign-public-certificates/
-docusign_client_fingerprint: 70d6116636eef6a32ef196b8e6d86fb17cffacaa
+# https://www.docusign.com/trust/compliance/public-certificates
+docusign_client_fingerprint: 3f49341d72bf31f4674c91569102668871c42524
 
 
 # CyberSource settings

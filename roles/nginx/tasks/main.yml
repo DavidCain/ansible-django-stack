@@ -8,8 +8,8 @@
   copy: content={{ ssl_crt }} dest={{ nginx_ssl_dest_dir }}/{{ root_name }}.crt
   notify: restart nginx
 
-- name: Copy root SSL certificate to remote server
-  copy: content={{ root_crt }} dest={{ nginx_ssl_dest_dir }}/{{ client_root_name }}.crt
+- name: Copy DocuSign root SSL certificate to remote server
+  copy: content={{ docusign_root_crt }} dest={{ nginx_ssl_dest_dir }}/{{ client_root_name }}.crt
   notify: restart nginx
 
 - name: Copy the SSL private key to the remote server
