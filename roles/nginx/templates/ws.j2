@@ -77,10 +77,6 @@ server {
         add_header  ETag "";
     }
 
-    location /media/ {
-        alias   {{ nginx_media_dir }};
-    }
-
     location / {
         if (-f {{ django_virtualenv_path }}/maintenance_on.html) {
             return 503;
