@@ -70,6 +70,8 @@ server {
 
     location /static/ {
         alias   {{ nginx_static_dir }};
+        # When `/path/to/file.js` is requested, try to serve `/path/to/file.js.gz` (eager gzipping is done by collectstatic)
+        # This is *not* the same as on-the-fly gzipping
         gzip_static on;
         expires     max;
         add_header  Cache-Control public;
@@ -78,6 +80,14 @@ server {
     }
 
     location / {
+        # On-the-fly gzipping of all responses.
+        # Be mindful of https://en.wikipedia.org/wiki/BREACH
+        gzip on;
+
+        # By default, NGINX only compresses HTML.
+        # Static assets are compressed by the above `location` block, but we should also gzip JSON + RSS
+        gzip_types  application/json application/rss+xml;
+
         if (-f {{ django_virtualenv_path }}/maintenance_on.html) {
             return 503;
         }
