@@ -3,7 +3,7 @@
 git_branch: master
 
 # IP address of EC2 instance serving MITOC Trips
-ec2_ip: 54.166.139.248
+ec2_ip: 107.22.154.6
 
 mitoc_bursar_name: "Hannah Varner"
 
